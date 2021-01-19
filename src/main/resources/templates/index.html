@@ -97,9 +97,8 @@
         }
 
         * {
-            margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            margin: 0;
         }
 
         *, *:before, *:after {
@@ -165,13 +164,9 @@
         }
 
         body {
-            font-family: $font-family;
-            font-size: $font-size;
-            background-size: 200% 100% !important;
-            animation: move 10s ease infinite;
-            transform: translate3d(0, 0, 0);
-            background: linear-gradient(45deg, #ABA194 10%, #ABA194 90%);
-            height: 100vh
+            font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+            font-weight: 400;
+            font-size: 14px;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -206,27 +201,27 @@
            #BACKGROUND
            ========================================================================== */
         .bg-blue {
-            background: #ABA194;
+            background: #2ed52a;
         }
 
         .bg-red {
-            background: #ABA194;
+            background: #29faba;
         }
 
         .bg-gra-01 {
-            background: -webkit-gradient(linear, left bottom, left top, from(#ABA194), to(#a18cd1));
-            background: -webkit-linear-gradient(bottom, #fbc2eb 0%, #ABA194 100%);
-            background: -moz-linear-gradient(bottom, #fbc2eb 0%, #ABA194 100%);
-            background: -o-linear-gradient(bottom, #fbc2eb 0%, #ABA194 100%);
-            background: linear-gradient(to top, #fbc2eb 0%, #ABA194 100%);
+            background: -webkit-gradient(linear, left bottom, left top, from(#fbc2eb), to(#a18cd1));
+            background: -webkit-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
+            background: -moz-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
+            background: -o-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
+            background: linear-gradient(to top, #fbc2eb 0%, #a18cd1 100%);
         }
 
         .bg-gra-02 {
-            background: -webkit-gradient(linear, left bottom, right top, from(#fc2c77), to(#6c4079));
-            background: -webkit-linear-gradient(bottom left, #fc2c77 0%, #6c4079 100%);
-            background: -moz-linear-gradient(bottom left, #fc2c77 0%, #6c4079 100%);
-            background: -o-linear-gradient(bottom left, #fc2c77 0%, #6c4079 100%);
-            background: linear-gradient(to top right, #fc2c77 0%, #6c4079 100%);
+            background: -webkit-gradient(linear, left bottom, right top, from(#5835fc), to(#6c4079));
+            background: -webkit-linear-gradient(bottom left, #5835fc 0%, #6c4079 100%);
+            background: -moz-linear-gradient(bottom left, #5835fc 0%, #6c4079 100%);
+            background: -o-linear-gradient(bottom left, #5835fc 0%, #6c4079 100%);
+            background: linear-gradient(to top right, #5835fc 0%, #6c4079 100%);
         }
 
         /* ==========================================================================
@@ -293,21 +288,17 @@
            #BUTTON
            ========================================================================== */
         .btn {
-            display: block;
-            width: 100%;
-            padding: 20px;
-            font-family: $font-family;
-            -webkit-appearance: none;
-            outline: 0;
-            border: 0;
-            color: blue;
-            $color-primary: #ABA194;
-            background: $color-primary;
-            transition: 0.3s;
-
-        &:hover {
-             background: darken($color-primary, 50%);
-         }
+            display: inline-block;
+            line-height: 50px;
+            padding: 0 50px;
+            -webkit-transition: all 0.4s ease;
+            -o-transition: all 0.4s ease;
+            -moz-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            font-size: 18px;
+            color: #fff;
+            font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
         }
 
         .btn--radius {
@@ -532,18 +523,8 @@
         }
 
         .input-group {
-            display: block;
-            width: 100%;
-            padding: 20px;
-            font-family: $font-family;
-            -webkit-appearance: none;
-            border: 0;
-            outline: 0;
-            transition: 0.3s;
-
-        &:focus {
-             background: darken(#fff, 3%);
-         }
+            position: relative;
+            margin-bottom: 22px;
         }
 
         .input-group-icon {
@@ -883,14 +864,14 @@
             //         body.singleUseCustomerToken = data.data;
             //         console.log(body.singleUseCustomerToken );
             //     }
-            error: function n(data, xhr) {
-                console.log("nirmal kumar rout");
-                console.log(data);
-                if (data != null) {
-                    console.log(data.responseText);
-                    body.singleUseCustomerToken = data.responseText;
-                    console.log(body.singleUseCustomerToken);
-                }
+                error: function n(data, xhr) {
+                    console.log("nirmal kumar rout");
+                    console.log(data);
+                    if (data != null) {
+                        console.log(data.responseText);
+                        body.singleUseCustomerToken = data.responseText;
+                        console.log(body.singleUseCustomerToken);
+                    }
 
                 paysafe.checkout.setup("cHVibGljLTc3NTE6Qi1xYTItMC01ZjAzMWNiZS0wLTMwMmQwMjE1MDA4OTBlZjI2MjI5NjU2M2FjY2QxY2I0YWFiNzkwMzIzZDJmZDU3MGQzMDIxNDUxMGJjZGFjZGFhNGYwM2Y1OTQ3N2VlZjEzZjJhZjVhZDEzZTMwNDQ=", body, function(instance, error, result) {
                     console.log(result)
